@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta name="description" content="This green site cover all the aspects of a green project. Find out what steps you need to develop a green project!"/>
+        <title>Best practice selector tool</title>
+        <link rel="stylesheet" type="text/css" href="static/main.css">
+        <link rel="stylesheet" type="text/css" href="static/modal.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 role="heading" class="center-item">Best practice selector tool</h1>
+            <hr>
+
+            <form class="form-control" id="best_practice_list_form">
+                <div class="caption">Best Practice</div>
+                <select id="best_practice">
+                    <option value="" selected disabled>Select a Best Practice</option>
+                    {% for origin in family_origin %}
+                        <option value="{{origin}}">{{origin}}</option>
+                    {% endfor %}
+                </select> 
+
+
+                <div class="caption">Recommendation</div>
+                <select id="recommendation">
+                    <option value="">Select a Recommendation</option>
+                </select> 
+
+                <div class="caption">Criteria</div>
+                <select id="criteria">
+                    <option value="">Select a Criteria</option>
+                </select> 
+
+            </form>
+
+
+            <div role="button" class="submit_section">
+                <p id="message"></p>
+                <input class="button_primary" id="submit_button" type="submit" value="Add to Cart"/>
+                <input class="button_primary" id="cart_button" cart_count = "{{cart_count}}" type="submit" value="Check Cart({{cart_count}})"/>
+            </div>
+            
+        </div>  
+
+        <div role="window" id="myModal" class="modal">
+            <div class="modal-content">
+              <span role="button" id="close">&times;</span>
+              <div role="heading" id="modal_title">Cart</div>
+              <br>
+              <div role="table" style="overflow-x:auto; max-height: 500px;">
+                <table border="1">
+                    <tbody id="table_body">
+                    </tbody>
+                </table>
+              </div>
+              
+              <input class="button_primary view_result_button" id="footer_button" type="submit" value="View Output"/>
+            </div>
+          
+          </div>
+        
+        <footer>
+            Copyright © Team-24, 2021
+        </footer>
+
+        <script src="static/main.js"></script>
+    </body>
+
+
+</html>
+

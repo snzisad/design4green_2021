@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="You have to follow these steps to develop your green project"/>
+        <title>Best practice selector tool</title>
+        <style>
+            table{
+                width:100%;
+                table-layout: fixed;
+                overflow-wrap: break-word;
+                color: #000;
+            }
+
+            td{
+                padding: 5px;
+            }
+
+            tr:first-of-type{
+                background-color: #888;
+                text-align: center;
+                color: #fff;
+            }
+
+
+            tr:not(:first-of-type) td:nth-child(4){
+                display: none;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div role="table" class="container">
+            <h1 style="text-align: center;">Best practice for your project</h1>
+            <hr>
+            <table border="1" style="margin-top: 50px;">
+                <tbody id="table_body">
+                    <tr>
+                        <td>Best Practice</td>
+                        <td>Recommendation</td>
+                        <td>Criteria</td>
+                        <td>Life Cycle Stage</td>
+                        <td>X Indicators</td>
+                        <td>Y Indicators</td>
+                        <td>Indicators</td>
+                    </tr>
+                    {% for data in cart_data %}
+                        <tr>
+                            <td>{{ data["family"] }}</td>
+                            <td>{{ data["recommendation"] }}</td>
+                            <td>{{ data["criteria"] }}<td>
+                            <td>{{ data["life_cycle_stage"] }}</td>
+                            <td>{{ data["x_indicators"] }}</td>
+                            <td>{{ data["y_indicators"] }}</td>
+                            <td>{{ data["indicators"] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>  
+    </body>
+
+    
+
+</html>
+
